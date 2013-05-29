@@ -23,6 +23,7 @@ file { '/etc/motd':
 }
 
 package {'build-essential': ensure => present, }
+package {'tree': ensure => present, }
 package {'ruby': ensure => present, }
 package {'ruby-dev': ensure => present, }
 package {'rubygems': ensure => present,  }

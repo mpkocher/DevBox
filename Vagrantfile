@@ -45,6 +45,7 @@ Vagrant::Config.run do |config|
   #
   config.vm.provision :puppet do |puppet|
     puppet.manifests_path = "manifests"
+    puppet.module_path = "modules"
     #puppet.manifest_file  = "precise64.pp"
     puppet.manifest_file  = "defaults.pp"
   end

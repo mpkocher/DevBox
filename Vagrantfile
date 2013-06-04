@@ -25,8 +25,11 @@ Vagrant::Config.run do |config|
   # folder, and the third is the path on the host to the actual folder.
   # config.vm.share_folder "v-data", "/vagrant_data", "../data"
 
-  # for smrtanalysis-2.1.0 (mainline)
-  # config.vm.share_folder "v-data", "/vagrant_data", "/Users/mkocher/builds"
+  # Set the number of cpus
+  config.vm.customize ["modifyvm", :id, "--cpus", 4]
+
+  # Set the memory
+  config.vm.customize ["modifyvm", :id, "--memory", 1024]
 
   # Enable provisioning with Puppet stand alone.  Puppet manifests
   # are contained in a directory path relative to this Vagrantfile.

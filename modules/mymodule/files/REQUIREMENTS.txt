@@ -1,0 +1,12 @@
+ipython
+flask
+tornado
+numpy
+nose
+cython
+supervisor
+superlance
+pandas
+jinja2
+requests
+pyzmq

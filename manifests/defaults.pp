@@ -32,7 +32,31 @@ package {'python-setuptools': ensure => present, }
 package {'screen': ensure => present, }
 package {'tmux': ensure => present, }
 package {'vim': ensure => "installed" }
-package {'emacs': ensure => "installed" }
+
+# C++
+package {'libboost-dev': ensure => "installed" }
+
+# emacs
+package {'emacs24': ensure => "installed" }
+package {'emacs24-el': ensure => "installed" }
+package {'emacs24-common': ensure => "installed" }
+#
+# Databases
+package {'postgresql': ensure => "installed" }
+package {'postgresql-contrib': ensure => "installed"}
+
+# Mono/Fsharp
+package {'mono-tools-devel': ensure => "installed"}
+package {'mono-complete': ensure => "installed"}
+
+# Need to add
+# sudo gedit /etc/apt/sources.list
+# deb http://us.archive.ubuntu.com/ubuntu saucy main universe
+#package {'fsharp': ensure => "installed"}
+
+# Javascript
+package {'nodejs': ensure => "installed"}
+package {'nodejs-dev': ensure => "installed"}
 
 package {'git': ensure => present, }
 package { 'gcc-4.4': ensure => present, }
@@ -44,7 +68,12 @@ package { 'pax': ensure => present, }
 package { 'file': ensure => present, }
 package { 'flex': ensure => present, }
 package { 'gfortran': ensure => present, }
-package { 'openjdk-6-jdk': ensure => present, }
+
+# Java/Scala
+#package { 'openjdk-6-jdk': ensure => present, }
+package { 'openjdk-7-jdk': ensure => present, }
+package {'scala': ensure => "installed"}
+
 package { 'rsync': ensure => present, }
 package { 'libbz2-dev': ensure => present, }
 package { 'libcairo-dev': ensure => present, }
@@ -59,3 +88,11 @@ package {'libhdf5-serial-dev': ensure => present, }
 package {'r-base': ensure => present, }
 package {'r-base-core': ensure => present, }
 package {'r-base-dev': ensure => present, }
+
+# Configure Docroot and index.html
+#file { ['/var/www', '/var/www/test']:
+#    ensure => directory
+#  }
+
+include mymodule
+#include puppet-module-python
